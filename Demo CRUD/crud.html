@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>JS CRUD</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+
+    <script src="https://kit.fontawesome.com/287f7449d7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="crud.css">
+</head>
+
+<body>
+    <div class="search-container">
+
+        <section class="header">
+            <h1 class="logo">Employee CRUD Form</h1>
+            <nav class="navbar">
+                <input type="text" id="search-input" title="Search names here..." placeholder="Search.."
+                    onkeyup="mySearch()">
+                <button id="search" class="btnSearch-popup"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="addEmployeeBtn"><i class="fa-solid fa-circle-plus"></i> Add Employee</button>
+                <div id="employeeModal" class="modal">
+                    <div class="modal-content modal-sm">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <!-- <form id="employeeForm">
+                            <input type="hidden" id="employeeId">
+                            <input type="text" id="nameInput" placeholder="Name" required>
+                            <input type="text" id="emailInput" placeholder="Email" required>
+                            <select id="skillSelect">
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="HTML">HTML</option>
+                                <option value="CSS">CSS</option>
+                                <option value="Python">Python</option>
+            
+                            </select>
+                            <label for="gender">Gender:</label>
+                            <input type="radio" id="male" name="gender" value="Male" required>
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="Female" required>
+                            <label for="female">Female</label>
+                            <input type="radio" id="other" name="gender" value="Other" required>
+                            <label for="other">Other</label>
+                            <button id="saveEmployeeBtn">Save</button>
+                        </form> -->
+                            <h2>Employee Form</h2>
+                        </div>
+                        <form class="employee-form" id="employeeForm">
+                            <input type="hidden" id="employeeId">
+                            <br>
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="nameInput" name="name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="emailInput" name="email" required />
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="dob">Date of Birth:</label>
+                                <input type="date" id="dob" name="dob" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="jdate">Joining Date:</label>
+                                <input type="date" id="jdate" name="jdate" required />
+                            </div> -->
+                            <div class="form-group">
+                                <label for="gender">Gender:</label>
+                                <label for="male">Male <input type="radio" id="male" name="gender" value="Male"
+                                        required>
+                                </label>
+                                <label for="female">Female <input type="radio" id="female" name="gender" value="Female"
+                                        required>
+                                </label>
+                                <label for="other">Other <input type="radio" id="other" name="gender" value="Other"
+                                        required>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Skill:</label>
+                                <select name="items" id="skillSelect">
+                                    <option value="">Select a language you prefer</option>
+                                    <option value="C">C</option>
+                                    <option value="Java">Java</option>
+                                    <option value="Html&Css">HTML&CSS</option>
+                                    <option value="Python">Python</option>
+                                    <option value="JavaScript">JavaScript</option>
+                                </select>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="photo">Photo:</label>
+                                <input type="file" id="photo" name="photo" accept="image/*" />
+                                <img id="preview" src="#" alt="Preview" style="display: none" />
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description:</label>
+                                <textarea id="description" name="description" required></textarea>
+                            </div> -->
+                            <div class="modal-footer">
+                                <button id="saveEmployeeBtn">Submit</button>
+                                <!-- <button type="reset">Reset</button> -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </div>
+
+    <div id="employeesList"></div>
+
+    <div id="pagination" class="pagination"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="crud.js"></script>
+</body>
+
+</html>
